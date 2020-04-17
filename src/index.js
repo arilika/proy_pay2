@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import FechaActual from './componentes/FechaActual/FechaActual';
+import Event from './componentes/Event/Event';
 import * as serviceWorker from './serviceWorker';
 
-const slogan = "Con Pay2 tus clientes de pagan Mas Facil, Rapido y Seguro.";
-const slogan2 = "Easy, Fast & Safe";
+
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
