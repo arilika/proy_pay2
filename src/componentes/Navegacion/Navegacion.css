@@ -1,0 +1,23 @@
+li {
+    font-weight: bold;
+    display: inline;
+    border-left: 1px solid #0ACB86;
+    
+}
+li:first-child{
+    border-left: none;;
+}
+li>a{ color: #333;
+    text-decoration: none;
+    padding: 2px 5px 2px 10px; 
+}
+li>a:active{ color: #0ACB86;
+    text-decoration: none;
+    padding: 2px 5px 2px 10px; 
+}
+a:hover{
+    color: #0ACB86;
+}
+nav{
+
+}
