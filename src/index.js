@@ -2,10 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import FechaActual from './componentes/FechaActual/FechaActual';
-import Event from './componentes/Event/Event';
-import Bienvenido from './componentes/Bienvenido/Bienvenido';
-import Autenticacion from './componentes/Autenticacion/Autenticacion';
 import * as serviceWorker from './serviceWorker';
 
 // Se importa el "store"

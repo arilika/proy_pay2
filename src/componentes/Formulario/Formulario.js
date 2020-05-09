@@ -1,14 +1,10 @@
 //import React from 'react';
 import React, { useRef } from 'react';
 import { Formik } from 'formik';
-//import Yup from 'yup';
-import Clientes from '../Clientes/Clientes';
 import './Formulario.css';
 import actualizarResultado from '../../redux/store/Resultado/action';
 import { connect } from 'react-redux';
-
 let usuarioId = null;
-
 const Formulario = ({ actualizarResultado }) => {
   const resultadoRef = useRef(null);
 
