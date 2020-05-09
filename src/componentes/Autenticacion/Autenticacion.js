@@ -2,7 +2,6 @@ import React from 'react';
 //import Saludo from '../Saludo/Saludo';
 
 import Bienvenido from '../Bienvenido/Bienvenido';
-import FechaActual from '../FechaActual/FechaActual';
 import './Autenticacion.css';
 
 function BotonInicio(props) {
@@ -21,10 +20,6 @@ function BotonCierreSesion(props) {
   );
 }
 
-function confirmarSalida(e) {
-  e.preventDefault();
-  alert('Desea salir del sistema de PAY2?');
-}
 
 class Autenticacion extends React.Component {
   constructor(props) {

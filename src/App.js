@@ -1,15 +1,9 @@
 import React from 'react';
 import logo from './logo.png';
 import './App.css';
-import Article from './Article/Article';
-import FechaActual from './componentes/FechaActual/FechaActual';
-import Event from './componentes/Event/Event';
-import Bienvenido from './componentes/Bienvenido/Bienvenido';
 import Autenticacion from './componentes/Autenticacion/Autenticacion';
-import ListaDatos from './componentes/ListaDatos/ListaDatos';
 import Formulario from './componentes/Formulario/Formulario';
 import Clientes from './componentes/Clientes/Clientes';
-import Navegacion from './componentes/Navegacion/Navegacion';
 import landing from './landing.png';
 import {
   BrowserRouter as Router,
@@ -20,15 +14,20 @@ import {
   useLocation,
   useParams
 } from "react-router-dom";
+import Resultado from './componentes/Resultado/Resultado';
+import { EditorConmutadorHOC, AreaExpandibleHOC } from './componentes/HOCConmutador'
 
 const slogan = "Easy, Fast & Safe";
 var nombre = "Ariela"
-const movimientos = ["28/10/2018", "28/11/2019", "28/12/2019", "28/01/2020", "28/02/2020", "28/03/2020"];
-const montos = ["1000", "1400", "2000", "900", "970", "300"];
+//let movimientos = ["28/10/2018", "28/11/2019", "28/12/2019", "28/01/2020"];
+let movimientos = [
+  { id: 1, descripcion: '28/10/2018' },
+  { id: 2, descripcion: '28/11/2019' },
+  { id: 1, descripcion: '28/12/2019' },
+  { id: 2, descripcion: '28/01/2020' }
+]
 let ultimoUsuario = 5;
-/*function Bienvenida(props) {
-  return <h3>Bienvenida {props.nombre}</h3>
-}*/
+
 
 function App() {
   return (
@@ -95,7 +94,8 @@ function Inicio() {
 function RealizarPago() {
   return <div className="container">
     <div className="form-container">
-      <Formulario />
+      <Formulario></Formulario>
+      <Resultado></Resultado>
     </div>
     <div className="mov-container">
       <div>
@@ -105,10 +105,16 @@ function RealizarPago() {
       </div>
       <div>
         <h2>&Uacute;ltimos Movimientos</h2>
-        <ListaDatos datos={movimientos} />
+        {/*<ListaDatos datos={movimientos} />*/}
+
+        <AreaExpandibleHOC lista={movimientos} conmutadorEstadoInicial={true} />
+        <EditorConmutadorHOC texto="Actualizar" conmutadorEstadoInicial={true} />
       </div>
 
     </div>
+
+
+
 
   </div>;
 }
@@ -140,16 +146,11 @@ function MiPerfil() {
           <Categoria />
         </Route>
         <Route path={match.path}>
-          <h3>Por favor seleccione una categoría de productos.</h3>
+          <h3>Por favor seleccione una opcion del menu.</h3>
         </Route>
       </Switch>
     </div>
   );
-}
-function PaginaNoEncontrada() {
-  let direccion = useLocation();
-  return <div><h2>Página No Encontrada</h2><p>No se encontró la página indicada
-    <code>{direccion.pathname}</code></p></div>;
 }
 
 export default App;

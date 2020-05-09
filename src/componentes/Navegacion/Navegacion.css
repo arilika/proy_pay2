@@ -1,4 +1,4 @@
-li {
+nav > li {
     font-weight: bold;
     display: inline;
     border-left: 1px solid #0ACB86;
@@ -17,7 +17,4 @@ li>a:active{ color: #0ACB86;
 }
 a:hover{
     color: #0ACB86;
-}
-nav{
-
 }
