@@ -20,10 +20,12 @@ import {
   useLocation,
   useParams
 } from "react-router-dom";
+import Resultado from './componentes/Resultado/Resultado';
+
 
 const slogan = "Easy, Fast & Safe";
 var nombre = "Ariela"
-const movimientos = ["28/10/2018", "28/11/2019", "28/12/2019", "28/01/2020", "28/02/2020", "28/03/2020"];
+const movimientos = ["28/10/2018", "28/11/2019", "28/12/2019", "28/01/2020"];
 const montos = ["1000", "1400", "2000", "900", "970", "300"];
 let ultimoUsuario = 5;
 /*function Bienvenida(props) {
@@ -95,7 +97,8 @@ function Inicio() {
 function RealizarPago() {
   return <div className="container">
     <div className="form-container">
-      <Formulario />
+      <Formulario></Formulario>
+      <Resultado></Resultado>
     </div>
     <div className="mov-container">
       <div>
